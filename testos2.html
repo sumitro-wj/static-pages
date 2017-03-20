@@ -14,12 +14,13 @@
 </script>
 
 <script>
+var context = this;
   window.extAsyncInit = function() {
     var element = document.getElementById("injectStat");
     element.innerHTML = "Facebook Extensions injected successfully.";
 
-    getUID();
-    getFeatures();
+    context.getUID();
+    context.getFeatures();
   };
 </script>
 
