@@ -17,10 +17,6 @@
   window.extAsyncInit = function() {
     var element = document.getElementById("injectStat");
     element.innerHTML = "Facebook Extensions injected successfully.";
-  };
-</script>
-
-<script>
     MessengerExtensions.getUserID(function success(uids) {
   	// User ID was successfully obtained. 
       	var psid = uids.psid;
@@ -41,6 +37,11 @@
     }, function error(err) {
 
     });
+  };
+</script>
+
+<script>
+    
 </script>
 
 <h1 id="injectStat">Loading...</h1>
