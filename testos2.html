@@ -14,18 +14,13 @@
 </script>
 
 <script>
-var context = this;
   window.extAsyncInit = function() {
     var element = document.getElementById("injectStat");
     element.innerHTML = "Facebook Extensions injected successfully.";
-
-    context.getUID();
-    context.getFeatures();
   };
 </script>
 
 <script>
-function getUID() {
     MessengerExtensions.getUserID(function success(uids) {
   	// User ID was successfully obtained. 
       	var psid = uids.psid;
@@ -34,9 +29,7 @@ function getUID() {
     }, function error(err) {      
   	// Error handling code
     });    
-}
 
-function getFeatures() {
     MessengerExtensions.getSupportedFeatures(function success(result) {
         var features = result.supported_features;
         var f = "";
@@ -48,7 +41,6 @@ function getFeatures() {
     }, function error(err) {
 
     });
-}
 </script>
 
 <h1 id="injectStat">Loading...</h1>
