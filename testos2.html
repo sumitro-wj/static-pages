@@ -1,0 +1,59 @@
+<html>
+
+<head></head>
+
+<body>
+<script>
+    (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+</script>
+
+<script>
+  window.extAsyncInit = function() {
+    var element = document.getElementById("injectStat");
+    element.innerHTML = "Facebook Extensions injected successfully.";
+
+    getUID();
+    getFeatures();
+  };
+</script>
+
+<script>
+function getUID() {
+    MessengerExtensions.getUserID(function success(uids) {
+  	// User ID was successfully obtained. 
+      	var psid = uids.psid;
+          var element = document.getElementById("userid");
+            element.innerHTML = psid;
+    }, function error(err) {      
+  	// Error handling code
+    });    
+}
+
+function getFeatures() {
+    MessengerExtensions.getSupportedFeatures(function success(result) {
+        var features = result.supported_features;
+        var f = "";
+        for (var i = 0; i < features.length; i++) {
+           f += features[i] +", ";
+        }
+        var element = document.getElementById("features");
+            element.innerHTML = f;
+    }, function error(err) {
+
+    });
+}
+</script>
+
+<h1 id="injectStat">Loading...</h1>
+<h2>UserID: <span id="userid"></span></h2>
+<h2>Available Features:</h2>
+<h3 id="features" style="margin-left:10px;"></h3> 
+</body>
+
+</html>
