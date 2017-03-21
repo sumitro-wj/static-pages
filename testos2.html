@@ -23,7 +23,7 @@
           var element = document.getElementById("userid");
             element.innerHTML = psid;
             element = document.getElementById("userdet");
-            element.innerHTML = uids;
+            element.innerHTML = JSON.stringify(uids);
     }, function error(err) {      
   	// Error handling code
     });    
