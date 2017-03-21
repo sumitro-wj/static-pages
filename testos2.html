@@ -15,6 +15,9 @@
 
 <script>
   window.extAsyncInit = function() {
+    var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname+window.location.search+window.location.hash;
+    var element = document.getElementById("url");
+            element.innerHTML = newURL;
     var urlParams = function getAllUrlParams(url) {
 
     // get query string from url (optional) or window
@@ -111,6 +114,7 @@
 </script>
 
 <h1 id="injectStat">Loading...</h1>
+<h2>URL: <span id="url">N/A</span></h2>
 <h2>UserID: <span id="userid">Not identified. You're probably not using Facebook Webview.</span></h2>
 <h2>User: <span id="userdet">Not identified. You're probably not using Facebook Webview.</span></h2>
 <h2>Available Features:</h2>
