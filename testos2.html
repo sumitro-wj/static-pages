@@ -22,6 +22,8 @@
       	var psid = uids.psid;
           var element = document.getElementById("userid");
             element.innerHTML = psid;
+            element = document.getElementById("userdet");
+            element.innerHTML = uids;
     }, function error(err) {      
   	// Error handling code
     });    
@@ -45,9 +47,10 @@
 </script>
 
 <h1 id="injectStat">Loading...</h1>
-<h2>UserID: <span id="userid"></span></h2>
+<h2>UserID: <span id="userid">Not identified. You're probably not using Facebook Webview.</span></h2>
+<h2>User: <span id="userdet">Not identified. You're probably not using Facebook Webview.</span></h2>
 <h2>Available Features:</h2>
-<h3 id="features" style="margin-left:10px;"></h3> 
+<h3 id="features" style="margin-left:10px;">Not identified. You're probably not using Facebook Webview.</h3> 
 </body>
 
 </html>
